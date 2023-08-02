@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+even/odd finder by ss
+</title>
+<style>
+*{font-size:70px; font-family:Impact;}
+body{background-color:lightblue;}
+h1{background-color:lightyellow; border-radius:40px; width:400px; }
+input{border-radius;30px}
+</style>
+<script>
+	function find()
+	
+		{
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let ans=document.getElementById("ans");
+
+			if(num.value=="")
+				
+				{
+					alert("number enter nahi kiya hai! number enter kar pahile ");
+					ans.innerHTML="";
+					num.focus();
+					return;
+
+				}
+			let n = parseFloat(num.value);
+
+			if (n < 0.0)
+				{
+					alert("negative number app nahi daal sakte sirf pasitive number he daaliye");
+					ans.innerHTML="";
+					num.focus();
+					num.value="";
+					return;
+				}
+			
+			let r= Math.sqrt(n);
+			let msg = "sqrt ="+ r.toFixed(4);
+			
+			ans.innerHTML=msg;
+		}
+</script>
+</head>
+<body>
+<center>
+<h1>square root finder</h1>
+
+<form onsubmit="find()">
+	<input type="number" step="any" placeholder="enter number" id="num"/>
+<br><br>
+	<input  type="submit" value="find sqrt"/>
+</form>
+<h2 id="ans"/>
+</center>
+</body>
+
+</html>
